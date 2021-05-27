@@ -2,7 +2,11 @@
     margin-top: 10%;
 }
 
-#stock-name-price-row {
+#stock-name-row {
+    height: 20%;
+}
+
+#stock-price-row {
     height: 20%;
 }
 

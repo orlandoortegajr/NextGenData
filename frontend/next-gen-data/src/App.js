@@ -35,7 +35,7 @@ const App = () => {
     <div className="container stock-container">
       <div className="row">
         <div className="col-7">
-          <div id="stock-name-price-row" className="row">
+          <div id="stock-name-row" className="row">
             <div className="col-12 center-div-vertically">
               <div id="stock-name-container">
                 <h1 id="stock-company-name">{`${companyName} (${stockSymbol})`}</h1>
@@ -43,7 +43,7 @@ const App = () => {
               </div>
             </div>
           </div>
-          <div className="row">
+          <div id="stock-price-row" className="row">
             <div className="col-12">
               <h2 id="stock-price">
                 {`${price} 
