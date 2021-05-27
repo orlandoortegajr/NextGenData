@@ -38,3 +38,7 @@
     width: 80%;
     height: 80%;
 }
+
+.center-div-vertically {
+    display: flex;
+}
