@@ -3,11 +3,10 @@
 }
 
 #stock-name-price-row {
-    height: 30%;
+    height: 20%;
 }
 
 #stock-company-name {
-    height: 50%;
     font-family: 'Merriweather', serif;
     font-weight: 700;
     font-size: 1.75vw;
@@ -29,4 +28,13 @@
     font-family: 'Merriweather', serif;
     font-weight: 400;
     font-size: 0.75vw;
+}
+
+#stock-name-container {
+    align-self: center;
+}
+
+#stock-graph-image {
+    width: 80%;
+    height: 80%;
 }

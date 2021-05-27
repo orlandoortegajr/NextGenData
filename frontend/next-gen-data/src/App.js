@@ -1,6 +1,7 @@
 import stockGraph from './images/stock-graph.jpg';
 import './styles/reset.css';
 import './styles/stock.css';
+import './styles/general.css'
 
 const App = () => {
   const companyName = 'Palantir Technologies Inc.';
@@ -33,18 +34,24 @@ const App = () => {
   return (
     <div className="container stock-container">
       <div className="row">
-        <div className="col">
+        <div className="col-7">
           <div id="stock-name-price-row" className="row">
-            <h1 id="stock-company-name">{`${companyName} (${stockSymbol})`}</h1>
-            <span id="exchange-name">{exchange}</span>
+            <div className="col-12 center-div-vertically">
+              <div id="stock-name-container">
+                <h1 id="stock-company-name">{`${companyName} (${stockSymbol})`}</h1>
+                <span id="exchange-name">{exchange}</span>
+              </div>
+            </div>
           </div>
           <div className="row">
+            <div className="col-12">
               <h2 id="stock-price">
-                    {`${price} 
-                      (${percentageIncrease > 0 ? '+' : '-'}${percentageIncrease}%)
-                    `}
+                {`${price} 
+                  (${percentageIncrease > 0 ? '+' : '-'}${percentageIncrease}%)
+                `}
               </h2>
               <span id="last-price-update">Last Updated: {lastUpdated}</span>
+            </div>   
           </div>
           <div className="row">
             <div className="col">
@@ -87,8 +94,8 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="col">
-          <img src={stockGraph} alt="a stock graph"></img>
+        <div className="col-5">
+          <img id="stock-graph-image" src={stockGraph} alt="a stock graph"></img>
         </div>
       </div>
     </div>
