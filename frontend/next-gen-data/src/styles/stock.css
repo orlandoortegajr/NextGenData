@@ -1,0 +1,32 @@
+.stock-container {
+    margin-top: 10%;
+}
+
+#stock-name-price-row {
+    height: 30%;
+}
+
+#stock-company-name {
+    height: 50%;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 1.75vw;
+}
+
+#exchange-name {
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 0.75vw;
+}
+
+#stock-price {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1vw;
+}
+
+#last-price-update {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 0.75vw;
+}
