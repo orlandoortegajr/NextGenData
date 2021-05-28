@@ -1,7 +1,8 @@
 import stockGraph from './images/stock-graph.jpg';
 import './styles/reset.css';
 import './styles/stock.css';
-import './styles/general.css'
+import './styles/general.css';
+import InfoRow from './components/InfoRow';
 
 const App = () => {
   const companyName = 'Palantir Technologies Inc.';
@@ -32,70 +33,56 @@ const App = () => {
   const earningsDate = '08-05-2021';
 
   return (
-    <div className="container stock-container">
-      <div className="row">
-        <div className="col-7">
-          <div id="stock-name-row" className="row">
-            <div className="col-12 center-div-vertically">
-              <div id="stock-name-container">
-                <h1 id="stock-company-name">{`${companyName} (${stockSymbol})`}</h1>
-                <span id="exchange-name">{exchange}</span>
+    <div className="container">
+      <div className="stock-container">
+        <div className="row">
+          <div className="col-8">
+            <div id="stock-name-row" className="row">
+              <div className="col-12 center-div-parent">
+                <div id="stock-name-container">
+                  <h1 id="stock-company-name">{`${companyName} (${stockSymbol})`}</h1>
+                  <h3 id="exchange-name">{exchange}</h3>
+                </div>
               </div>
             </div>
+            <div id="stock-price-row" className="row">
+              <div className="col-12 center-div-parent">
+                <h2 id="stock-price">
+                  {`${price} 
+                    (${percentageIncrease > 0 ? '+' : '-'}${percentageIncrease}%)
+                  `}
+                </h2>
+                <h3 id="last-price-update">Last Updated: {lastUpdated}</h3>
+              </div>   
+            </div>
+            <InfoRow 
+              leftTitle={'Day Range'} 
+              leftValue={`${lowestDayPrice}-${highestDayPrice}`}
+              rightTitle={'Market Cap'}
+              rightValue={marketCapString}
+            />
+            <InfoRow 
+              leftTitle={'52 Week Range'} 
+              leftValue={`${yearLow}-${yearHigh}`}
+              rightTitle={'Price/Earnings Ratio'}
+              rightValue={priceEarningsRatio}
+            />
+            <InfoRow 
+              leftTitle={'Dividend'} 
+              leftValue={`${dividend}$`}
+              rightTitle={'Volume'}
+              rightValue={volume}
+            />
+            <InfoRow
+              leftTitle={'Earnings Date'} 
+              leftValue={earningsDate}
+              rightTitle={'Average Volume'}
+              rightValue={avgVolume}
+            />
           </div>
-          <div id="stock-price-row" className="row">
-            <div className="col-12">
-              <h2 id="stock-price">
-                {`${price} 
-                  (${percentageIncrease > 0 ? '+' : '-'}${percentageIncrease}%)
-                `}
-              </h2>
-              <span id="last-price-update">Last Updated: {lastUpdated}</span>
-            </div>   
+          <div className="col-4">
+            <img id="stock-graph-image" src={stockGraph} alt="a stock graph"></img>
           </div>
-          <div className="row">
-            <div className="col">
-              <span>Day Range</span>
-              <span>{`${lowestDayPrice}-${highestDayPrice}`}</span>
-            </div>
-            <div className="col">
-              <span>Market Cap</span>
-              <span>{marketCapString}</span>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <span>52 Week Range</span>
-              <span>{`${yearLow}-${yearHigh}`}</span>
-            </div>
-            <div className="col">
-              <span>Price/Earnings Ratio</span>
-              <span>{priceEarningsRatio}</span>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <span>Dividend</span>
-              <span>{`${dividend}$`}</span>
-            </div>
-            <div className="col">
-              <span>Volume</span>
-              <span>{volume}</span>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <span>Earnings Date</span>
-              <span>{earningsDate}</span>
-            </div>
-            <div className="col">
-              <span>Average Volume</span>
-              <span>{avgVolume}</span>
-            </div>
-          </div>
-        </div>
-        <div className="col-5">
-          <img id="stock-graph-image" src={stockGraph} alt="a stock graph"></img>
         </div>
       </div>
     </div>

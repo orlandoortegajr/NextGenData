@@ -1,5 +1,8 @@
 .stock-container {
     margin-top: 10%;
+    margin-bottom: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 #stock-name-row {
@@ -8,6 +11,10 @@
 
 #stock-price-row {
     height: 20%;
+}
+
+#info-row {
+    height: 15%;
 }
 
 #stock-company-name {
@@ -26,16 +33,15 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 1vw;
+    align-self: center;
 }
 
 #last-price-update {
     font-family: 'Merriweather', serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 0.75vw;
-}
-
-#stock-name-container {
     align-self: center;
+    margin-left: 5%;
 }
 
 #stock-graph-image {
@@ -43,6 +49,21 @@
     height: 80%;
 }
 
-.center-div-vertically {
-    display: flex;
+#stock-name-container {
+    align-self: center;
 }
+
+.info-row-title {
+    align-self: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 1vw;
+}
+
+.info-row-value {
+    align-self: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1vw;
+}
+
