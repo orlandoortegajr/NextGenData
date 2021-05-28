@@ -11,16 +11,14 @@
 
 #stock-price-row {
     height: 20%;
-}
-
-#info-row {
-    height: 15%;
+    margin-top: 0.5%;
+    margin-bottom: 0.25%;
 }
 
 #stock-company-name {
     font-family: 'Merriweather', serif;
     font-weight: 700;
-    font-size: 1.75vw;
+    font-size: 2vw;
 }
 
 #exchange-name {
@@ -31,15 +29,23 @@
 
 #stock-price {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 1vw;
+    font-weight: 700;
+    font-size: 1.5vw;
     align-self: center;
+}
+
+#stock-price-percentage {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size:  1.25vw;
+    align-self: center;
+    margin-left: 5px;
 }
 
 #last-price-update {
     font-family: 'Merriweather', serif;
     font-weight: 300;
-    font-size: 0.75vw;
+    font-size: 0.85vw;
     align-self: center;
     margin-left: 5%;
 }
@@ -53,17 +59,12 @@
     align-self: center;
 }
 
-.info-row-title {
-    align-self: center;
-    font-family: 'Merriweather', serif;
-    font-weight: 400;
-    font-size: 1vw;
+#stock-details-column {
+    padding: 0 3%;
 }
 
-.info-row-value {
-    align-self: center;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 1vw;
+#stock-price-header {
+    display: flex;
+    align-items: center;
 }
 

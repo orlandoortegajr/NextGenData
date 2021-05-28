@@ -1,0 +1,29 @@
+#info-row {
+    height: 15%;
+}
+
+.info-row-title {
+    align-self: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 1vw;
+}
+
+.info-row-value {
+    align-self: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1vw;
+}
+
+.info-row-title-value-container {
+    border-bottom: rgba(102, 107, 115,  1) 0.5px solid;
+}
+
+#left-title-value-container {
+    margin-right: 1%;
+}
+
+#right-title-value-container {
+    margin-left: 1%;
+}

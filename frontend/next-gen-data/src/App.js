@@ -10,6 +10,7 @@ const App = () => {
   const exchange = 'NYSE';
   const price = 54.42;
   const percentageIncrease = 15.23;
+  var color = (percentageIncrease > 0 ? 'green' : 'red');
   const lastUpdated = '07-05-2021 2:45PM EST';
   const lowestDayPrice = 52.50;
   const highestDayPrice = 55.30;
@@ -36,7 +37,7 @@ const App = () => {
     <div className="container">
       <div className="stock-container">
         <div className="row">
-          <div className="col-8">
+          <div id="stock-details-column" className="col-8">
             <div id="stock-name-row" className="row">
               <div className="col-12 center-div-parent">
                 <div id="stock-name-container">
@@ -47,10 +48,9 @@ const App = () => {
             </div>
             <div id="stock-price-row" className="row">
               <div className="col-12 center-div-parent">
-                <h2 id="stock-price">
-                  {`${price} 
-                    (${percentageIncrease > 0 ? '+' : '-'}${percentageIncrease}%)
-                  `}
+                <h2 id="stock-price-header">
+                  <span id="stock-price">{`${price}`}</span>
+                  <span id="stock-price-percentage" style={{color: color}}>{`(${percentageIncrease > 0 ? '+' : '-'}${percentageIncrease}%)`}</span>   
                 </h2>
                 <h3 id="last-price-update">Last Updated: {lastUpdated}</h3>
               </div>   
@@ -81,7 +81,9 @@ const App = () => {
             />
           </div>
           <div className="col-4">
-            <img id="stock-graph-image" src={stockGraph} alt="a stock graph"></img>
+            <div className="center-div-parent-horizontal">
+              <img id="stock-graph-image" src={stockGraph} alt="a stock graph"></img>
+            </div>
           </div>
         </div>
       </div>
