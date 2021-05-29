@@ -1,33 +1,23 @@
-import stockGraph from './images/stock-graph.jpg';
 import './styles/reset.css';
 import './styles/stock.css';
 import './styles/general.css';
-import InfoRow from './components/InfoRow';
+import stockGraph from './images/stock-graph.jpg';
+import InfoRows from './components/InfoRows';
+import StockPrice from './components/StockPrice';
 
 const App = () => {
   const companyName = 'Palantir Technologies Inc.';
   const stockSymbol = 'PLTR';
   const exchange = 'NYSE';
   const price = 54.42;
-  const percentageIncrease = 15.23;
-  var color = (percentageIncrease > 0 ? 'green' : 'red');
+  const percentageChange = 0.1523;
   const lastUpdated = '07-05-2021 2:45PM EST';
   const lowestDayPrice = 52.50;
   const highestDayPrice = 55.30;
-  const marketCap = 2_600_000_000;
-  const billion = 1_000_000_000;
-  const million = 1_000_000;
-  var marketCapString = '';
-  if((marketCap / billion) >= 1) {
-    marketCapString = `${marketCap/billion}B`;
-  } else if((marketCap/billion) >= 1000) {
-    marketCapString = `${(marketCap/billion)/1000}T`
-  } else {
-    marketCapString = `${(marketCap/million)}M`;
-  }
+  const marketCap = 2_645_000_000;
   const yearLow = 42.50;
   const yearHigh = 65.3;
-  const priceEarningsRatio = 15.3;
+  const priceEarningsRatio = 15.32;
   const dividend = 1.30;
   const volume = 13_870_000;
   const avgVolume = 12_000_000;
@@ -46,38 +36,22 @@ const App = () => {
                 </div>
               </div>
             </div>
-            <div id="stock-price-row" className="row">
-              <div className="col-12 center-div-parent">
-                <h2 id="stock-price-header">
-                  <span id="stock-price">{`${price}`}</span>
-                  <span id="stock-price-percentage" style={{color: color}}>{`(${percentageIncrease > 0 ? '+' : '-'}${percentageIncrease}%)`}</span>   
-                </h2>
-                <h3 id="last-price-update">Last Updated: {lastUpdated}</h3>
-              </div>   
-            </div>
-            <InfoRow 
-              leftTitle={'Day Range'} 
-              leftValue={`${lowestDayPrice}-${highestDayPrice}`}
-              rightTitle={'Market Cap'}
-              rightValue={marketCapString}
+            <StockPrice 
+              price={price}
+              percentageChange={percentageChange}
+              lastUpdated={lastUpdated}
             />
-            <InfoRow 
-              leftTitle={'52 Week Range'} 
-              leftValue={`${yearLow}-${yearHigh}`}
-              rightTitle={'Price/Earnings Ratio'}
-              rightValue={priceEarningsRatio}
-            />
-            <InfoRow 
-              leftTitle={'Dividend'} 
-              leftValue={`${dividend}$`}
-              rightTitle={'Volume'}
-              rightValue={volume}
-            />
-            <InfoRow
-              leftTitle={'Earnings Date'} 
-              leftValue={earningsDate}
-              rightTitle={'Average Volume'}
-              rightValue={avgVolume}
+            <InfoRows 
+              lowestDayPrice={lowestDayPrice}
+              highestDayPrice={highestDayPrice}
+              marketCap={marketCap}
+              yearLow={yearLow}
+              yearHigh={yearHigh}
+              priceEarningsRatio={priceEarningsRatio}
+              dividend={dividend}
+              volume={volume}
+              earningsDate={earningsDate}
+              avgVolume={avgVolume}
             />
           </div>
           <div className="col-4">

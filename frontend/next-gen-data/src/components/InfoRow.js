@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import '../styles/components/InfoRow.css';
 
 const InfoRow = ({ leftTitle, leftValue, rightTitle, rightValue }) => {
@@ -21,6 +22,18 @@ const InfoRow = ({ leftTitle, leftValue, rightTitle, rightValue }) => {
       </div>
     </div>
   );
+};
+
+InfoRow.propTypes = {
+  leftTitle: PropTypes.string.isRequired,
+  rightTitle: PropTypes.string.isRequired,
+  leftValue: PropTypes.string,
+  rightValue: PropTypes.string
+}
+
+InfoRow.defaultProps = {
+  leftValue: '-',
+  rightValue: '-'
 };
 
 export default InfoRow;
