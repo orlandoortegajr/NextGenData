@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
+import '../styles/general.css';
 import '../styles/components/InfoRow.css';
+import PropTypes from 'prop-types';
 
 const InfoRow = ({ leftTitle, leftValue, rightTitle, rightValue }) => {
   return (

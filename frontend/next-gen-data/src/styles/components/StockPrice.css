@@ -1,0 +1,33 @@
+#stock-price-row {
+    height: 20%;
+    margin-top: 0.5%;
+    margin-bottom: 0.25%;
+}
+
+#stock-price-header {
+    display: flex;
+    align-items: center;
+}
+
+#stock-price {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.5vw;
+    align-self: center;
+}
+
+#stock-price-percentage {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size:  1.25vw;
+    align-self: center;
+    margin-left: 5px;
+}
+
+#last-price-update {
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 0.85vw;
+    align-self: center;
+    margin-left: 5%;
+}

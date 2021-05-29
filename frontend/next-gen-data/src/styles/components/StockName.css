@@ -1,0 +1,19 @@
+#stock-name-row {
+    height: 20%;
+}
+
+#stock-company-name {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 2vw;
+}
+
+#exchange-name {
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 0.75vw;
+}
+
+#stock-name-container {
+    align-self: center;
+}

@@ -1,12 +1,14 @@
+import '../styles/components/StockPrice.css';
+import '../styles/general.css';
 import {getTwoDecimalDigits} from '../utility/utility';
 import {convertPercentageChangeToStr, getColor} from '../utility/StockPriceUtility';
 import PropTypes from 'prop-types';
 
-const StockPrice = ({ price, percentageChange, lastUpdated}) => {
-    const priceStr = getTwoDecimalDigits(price);
-    const percentageChangeStr = convertPercentageChangeToStr(percentageChange);
-    const color = getColor(percentageChange);
-    const lastUpdateStr = 'Last Updated: ' + lastUpdated;
+const StockPrice = ({ stockPrice }) => {
+    const priceStr = getTwoDecimalDigits(stockPrice.price);
+    const percentageChangeStr = convertPercentageChangeToStr(stockPrice.percentageChange);
+    const color = getColor(stockPrice.percentageChange);
+    const lastUpdateStr = 'Last Updated: ' + stockPrice.lastUpdated;
 
     return (
         <div id="stock-price-row" className="row">
@@ -22,15 +24,7 @@ const StockPrice = ({ price, percentageChange, lastUpdated}) => {
 }
 
 StockPrice.propTypes = {
-    price: PropTypes.number,
-    percentageChange: PropTypes.number,
-    lastUpdated: PropTypes.string
-}
-
-StockPrice.defaultProps = {
-    price: 0,
-    percentageChange: 0,
-    lastUpdated: '-',
+    stockPrice: PropTypes.object.isRequired
 }
 
 export default StockPrice;

@@ -6,35 +6,25 @@ import {convertRangeToString,
        } from '../utility/InfoRowsUtility';
 import { getTwoDecimalDigits, formatLageNumberWithCommas} from '../utility/utility';
 
-const InfoRows = (
-    {
-      lowestDayPrice, 
-      highestDayPrice, 
-      marketCap, 
-      yearLow, 
-      yearHigh,
-      priceEarningsRatio,
-      dividend,
-      volume,
-      earningsDate,
-      avgVolume
-    }) => {
+
+const InfoRows = ({stockInfo}) => {
 
     const dayRangeStr = 'Day Range';
-    const dayRangeValue = convertRangeToString(lowestDayPrice, highestDayPrice);
+    const dayRangeValue = convertRangeToString(stockInfo.lowestDayPrice, stockInfo.highestDayPrice);
     const marketCapStr = 'Market Cap';
-    const marketCapValue = convertMarketCapToString(marketCap);
+    const marketCapValue = convertMarketCapToString(stockInfo.marketCap);
     const yearRangeStr = '52 Week Range';
-    const yearRangeValue = convertRangeToString(yearLow, yearHigh);
+    const yearRangeValue = convertRangeToString(stockInfo.yearLow, stockInfo.yearHigh);
     const priceEarningsStr = 'Price/Earnings Ratio';
-    const priceEarningsValue = getTwoDecimalDigits(priceEarningsRatio);
+    const priceEarningsValue = getTwoDecimalDigits(stockInfo.priceEarningsRatio);
     const dividendStr = 'Dividend';
-    const dividendValue = convertDividendToString(dividend);
+    const dividendValue = convertDividendToString(stockInfo.dividend);
     const volumeStr = 'Volume';
-    const volumeValue = formatLageNumberWithCommas(volume);
+    const volumeValue = formatLageNumberWithCommas(stockInfo.volume);
     const earningsDateStr = 'Earnings Date';
     const avgVolumeStr = 'Average Volume';
-    const avgVolumeValue = formatLageNumberWithCommas(avgVolume);
+    const avgVolumeValue = formatLageNumberWithCommas(stockInfo.avgVolume);
+    const earningsDateValue = stockInfo.earningsDate;
     
     return (
         <>
@@ -58,7 +48,7 @@ const InfoRows = (
             />
             <InfoRow
               leftTitle={earningsDateStr} 
-              leftValue={earningsDate}
+              leftValue={earningsDateValue}
               rightTitle={avgVolumeStr}
               rightValue={avgVolumeValue}
             />
@@ -66,30 +56,8 @@ const InfoRows = (
     );
 }
 
-InfoRow.propTypes = {
-    lowestDayPrice: PropTypes.number,
-    highestDayPrice: PropTypes.number,
-    marketCap: PropTypes.number,
-    yearLow: PropTypes.number,
-    yearHigh: PropTypes.number,
-    priceEarningsRatio: PropTypes.number,
-    dividend: PropTypes.number,
-    volume: PropTypes.number,
-    earningsDate: PropTypes.string,
-    avgVolume: PropTypes.number
-}
-
-InfoRows.defaultProps = {
-    lowestDayPrice: 0,
-    highestDayPrice: 0,
-    marketCap: 0,
-    yearLow: 0,
-    yearHigh: 0,
-    priceEarningsRatio: 0,
-    dividend: 0,
-    volume: 0,
-    earningsDate: '-',
-    avgVolume: 0
+InfoRows.propTypes = {
+    stockInfo: PropTypes.object.isRequired
 }
 
 export default InfoRows;
