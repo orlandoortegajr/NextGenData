@@ -1,4 +1,4 @@
-export const stockDetails = {
+export const stockDetailsTest = {
     stockName: {
         companyName: 'Palantir Technologies Inc.',
         stockSymbol: 'PLTR',
