@@ -3,7 +3,10 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const axios = require('axios');
+const cors = require('cors');
 const moment = require('moment-timezone');
+
+app.use(cors());
 
 var stockDetails = {
     stockName: {
