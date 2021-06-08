@@ -3,7 +3,6 @@ import '../styles/components/StockName.css';
 import PropTypes from 'prop-types'
 
 const StockName = ({ stockName }) => {
-    console.log(stockName);
     const nameExchangeString = `${stockName.companyName} (${stockName.stockSymbol})`; 
     
     return (

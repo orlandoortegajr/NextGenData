@@ -1,7 +1,8 @@
 *Front-end*
 ☐ Add React Routes to get paramter for ticker symbol
-☐ Figure out why web is loading twice, it should only load once with API data
+✔ Figure out why web is loading twice, it should only load once with API data @done(21-06-08 19:40)
 ☐ Implement error handlers to return a bad screen when an error is encountered
+☐ Show loading animation when fetchin data
 
 *Back-end*
 ☐ Find out best practice for sending correct responses

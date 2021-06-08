@@ -2,7 +2,7 @@ import '../styles/components/StockDetails.css';
 import InfoRows from './InfoRows'
 import StockPrice from './StockPrice';
 import StockName from './StockName';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 const StockDetails = () => {
@@ -31,7 +31,7 @@ const StockDetails = () => {
     }
   };
 
-  const getStockData = () => {
+  const getStockData = useCallback(() => {
     axios.get('http://localhost:5000/api/stocks/details/MSFT')
       .then(res => {
         setStockData(prevStockData => ({
@@ -59,25 +59,36 @@ const StockDetails = () => {
             earningsDate: res.data["stockInfo"]["earningsDate"]
           }
         }));
+        setIsFetching(false);
       })
       .catch(err => console.log(err));
-  };
-  const [stockData, setStockData] = useState(fetchedStockData);
+  }, []);
 
-  useEffect(getStockData, []);
+  const [stockData, setStockData] = useState(fetchedStockData);
+  const [isFetching, setIsFetching] = useState(true);
+
+  useEffect(() => {
+    getStockData()
+  }, [getStockData]);
 
   return (
-      <div id="stock-details-column" className="col-8">
-        <StockName
-          stockName={stockData.stockName}
-        />
-        <StockPrice 
-          stockPrice={stockData.stockPrice}
-        />
-        <InfoRows 
-          stockInfo={stockData.stockInfo}
-        />
-      </div>
+    <div id="stock-details-column" className="col-8">
+      {isFetching ? (
+        <div> Loading... </div>
+      ) :  (
+        <>
+          <StockName
+            stockName={stockData.stockName}
+          />
+          <StockPrice 
+            stockPrice={stockData.stockPrice}
+          />
+          <InfoRows 
+            stockInfo={stockData.stockInfo}
+          />
+        </>
+      )}
+    </div>
   );
 }
 
